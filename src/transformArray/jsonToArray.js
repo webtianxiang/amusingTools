@@ -1,3 +1,4 @@
+import $utils from '../utils'
 let dataModel = []
 let deep = 0
 let typeList = {
@@ -20,7 +21,7 @@ function recursionJson (json, target, deep) {
       item.value = typeName === 'object' ? '' : json[key]
       item.target = target
       item.deep = deep
-      item.id = randomStr()
+      item.id = $utils.randomStr()
       dataModel.push(item)
       typeName = typeName === 'object' ? (json[key] instanceof Array ?  'array' : 'object') : typeName
       if (typeName === 'object') {
@@ -31,16 +32,6 @@ function recursionJson (json, target, deep) {
     }
   }
   return
-}
-function randomStr () {
-  let standard = '0123456789abcdefghijklmnopqrstuvwxyz'
-  let randomNumLen = 8
-  let resultStr = ''
-  for (var i = 0; i < randomNumLen; i++) {
-    let randomNum = Math.floor(Math.random() * 36)
-    resultStr += standard.charAt(randomNum)
-  }
-  return resultStr
 }
 
 let testJson = '{"code":0,"msg":"","data":{"project":{"id":"5d4bba61aa4ec40008626719","name":"itest","timeType":1,"intervalTime":1,"autoStartTime":1,"autoEndTime":1,"createTime":1565244001145,"envMap":{"zelda":"","a":"a"},"isAsync":1,"isDelete":null,"jobSwitch":true,"type":null,"updateUser":"iTest","updateTime":1586908904541},"page":{"pageNo":1,"pageSize":10,"total":20,"list":[{"updateId":63000,"updateName":"iTest"}]}}}'

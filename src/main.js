@@ -1,5 +1,7 @@
-import jsonTransformArray from './jsonTransformArray'
+import transformArray from './transformArray'
+import uitls from './utils'
 
 export default {
-  jsonTransformArray
+  transformArray,
+  uitls
 }
