@@ -1,5 +1,7 @@
-import transformArray from './dist/main.bundle'
+var transformArray1 = require('../dist/new.bundle.js')
+// var transformArray2 = require('../dist/new.bundle.js')
 
+// console.log(1,transformArray1,2,transformArray2 )
 const testJson = '{"code":0,"msg":"","data":{"project":{"id":"5d4bba61aa4ec40008626719","name":"itest","timeType":1,"intervalTime":1,"autoStartTime":1,"autoEndTime":1,"createTime":1565244001145,"envMap":{"zelda":"","a":"a"},"isAsync":1,"isDelete":null,"jobSwitch":true,"type":null,"updateUser":"iTest","updateTime":1586908904541},"page":{"pageNo":1,"pageSize":10,"total":20,"list":[{"updateId":63000,"updateName":"iTest"}]}}}'
 const testTree = '[{"name":"code","type":"Number","description":"","ruleStr":"","value":0,"target":null,"deep":1},{"name":"msg","type":"String","description":"","ruleStr":"","value":"","target":null,"deep":1},{"name":"data","type":"Object","description":"","ruleStr":"","value":[{"name":"project","type":"Object","description":"","ruleStr":"","value":[{"name":"id","type":"String","description":"","ruleStr":"","value":"5d4bba61aa4ec40008626719","target":"project","deep":3},{"name":"name","type":"String","description":"","ruleStr":"","value":"itest","target":"project","deep":3},{"name":"timeType","type":"Number","description":"","ruleStr":"","value":1,"target":"project","deep":3},{"name":"intervalTime","type":"Number","description":"","ruleStr":"","value":1,"target":"project","deep":3},{"name":"autoStartTime","type":"Number","description":"","ruleStr":"","value":1,"target":"project","deep":3},{"name":"autoEndTime","type":"Number","description":"","ruleStr":"","value":1,"target":"project","deep":3},{"name":"createTime","type":"Number","description":"","ruleStr":"","value":1565244001145,"target":"project","deep":3},{"name":"envMap","type":"Object","description":"","ruleStr":"","value":[{"name":"zelda","type":"String","description":"","ruleStr":"","value":"","target":"envMap","deep":4},{"name":"a","type":"String","description":"","ruleStr":"","value":"a","target":"envMap","deep":4}],"target":"project","deep":3},{"name":"isAsync","type":"Number","description":"","ruleStr":"","value":1,"target":"project","deep":3},{"name":"isDelete","type":"Object","description":"","ruleStr":"","value":"","target":"project","deep":3},{"name":"jobSwitch","type":"Boolean","description":"","ruleStr":"","value":true,"target":"project","deep":3},{"name":"type","type":"Object","description":"","ruleStr":"","value":"","target":"project","deep":3},{"name":"updateUser","type":"String","description":"","ruleStr":"","value":"iTest","target":"project","deep":3},{"name":"updateTime","type":"Number","description":"","ruleStr":"","value":1586908904541,"target":"project","deep":3}],"target":"data","deep":2},{"name":"page","type":"Object","description":"","ruleStr":"","value":"","target":"data","deep":2}],"target":null,"deep":1}]'
 const testArray = [
@@ -274,7 +276,6 @@ const testArray = [
     id: '2nnhg5hgt9'
   }
 ]
-
-console.log(transformArray.jsonToArray(JSON.parse(testJson), null, 0))
-// console.log(transformArray.treeToArray(JSON.parse(testTree), null, 0))
-// console.log(transformArray.arrayToTree(JSON.parse(testJson), 0))
+// console.log(JSON.stringify(transformArray1.default.transformArray.jsonToArray(JSON.parse(testJson))))
+// console.log(JSON.stringify(transformArray1.default.transformArray.treeToArray(JSON.parse(testTree))))
+console.log(JSON.stringify(transformArray1.default.transformArray.arrayToTree(testArray)))

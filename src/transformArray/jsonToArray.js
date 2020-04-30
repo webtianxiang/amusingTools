@@ -1,6 +1,5 @@
 import $utils from '../utils'
 let dataModel = []
-let deep = 0
 let typeList = {
   number: 'number',
   string: 'string',
@@ -35,6 +34,9 @@ function recursionJson (json, target, deep) {
 }
 
 let testJson = '{"code":0,"msg":"","data":{"project":{"id":"5d4bba61aa4ec40008626719","name":"itest","timeType":1,"intervalTime":1,"autoStartTime":1,"autoEndTime":1,"createTime":1565244001145,"envMap":{"zelda":"","a":"a"},"isAsync":1,"isDelete":null,"jobSwitch":true,"type":null,"updateUser":"iTest","updateTime":1586908904541},"page":{"pageNo":1,"pageSize":10,"total":20,"list":[{"updateId":63000,"updateName":"iTest"}]}}}'
-recursionJson(JSON.parse(testJson), null, deep)
+recursionJson(JSON.parse(testJson), null, 0)
 
-export default recursionJson
+export default function recursionJsonResult (json) {
+  recursionJson(JSON.parse(testJson), null, 0)
+  return dataModel
+}

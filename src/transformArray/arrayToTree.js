@@ -1,9 +1,8 @@
-let curDeep = 0
 let conversionResult = []
-function coversionTree (flatData, curDeep) {
+function coversionTree (flatData, curDeep = 0) {
     curDeep++
     if (flatData instanceof Array && flatData.length > 0 && flatData.filter(item => item.deep === curDeep).length > 0) {
-        tempList = flatData.filter(item => item.deep === curDeep)
+        let tempList = flatData.filter(item => item.deep === curDeep)
         if (curDeep === 1) {
             conversionResult.push(...tempList)
         } else {
@@ -48,5 +47,8 @@ function recursionSearch (data, attribute, target) {
   }
   return res
 }
-coversionTree(output, curDeep)
-export default coversionTree
+
+export default function coversionTreeResult(array) {
+  coversionTree(array)
+  return conversionResult
+}
